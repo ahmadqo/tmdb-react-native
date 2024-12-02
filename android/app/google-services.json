@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856160384004",
+    "project_id": "movie-qu",
+    "storage_bucket": "movie-qu.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856160384004:android:4d23c68a5f45fdd82af151",
+        "android_client_info": {
+          "package_name": "com.my_movie_qu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLpG2UTgYMBJdeAZ3Jqh_CulIrh3EsLgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

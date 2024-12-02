@@ -6,7 +6,7 @@ import {
   StyleSheet,
   ImageBackground,
   View,
-  Alert,
+  // Alert,
 } from 'react-native';
 import {BlurView} from '@react-native-community/blur';
 // import auth from '@react-native-firebase/auth';
@@ -14,10 +14,10 @@ import {BlurView} from '@react-native-community/blur';
 const LoginScreen = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
 
   const handleLogin = async () => {
-    setLoading(true);
+    // setLoading(true);
     // try {
     //   await auth().signInWithEmailAndPassword(email, password);
     //   Alert.alert('Login Successful', 'Welcome to the app!');
@@ -29,7 +29,7 @@ const LoginScreen = () => {
   };
 
   const handleSignUp = async () => {
-    setLoading(true);
+    // setLoading(true);
     // try {
     //   await auth().createUserWithEmailAndPassword(email, password);
     //   Alert.alert('Sign Up Successful', 'Account created successfully!');

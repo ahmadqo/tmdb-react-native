@@ -1,14 +1,13 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
 import {View, ActivityIndicator} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 // import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
-// import auth from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 
 import HomeScreen from '../screens/HomeScreen';
-// import AuthScreen from '../screens/Auth';
+import AuthScreen from '../screens/Auth';
 
 // import DetailScreen from '../screens/DetailScreen';
 // import Test from '../screens/Test';
@@ -16,7 +15,7 @@ import HomeScreen from '../screens/HomeScreen';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(true);
 
   // Check Authentication Status
   // const checkAuth = async () => {
@@ -32,29 +31,30 @@ const AppNavigator = () => {
   // useEffect(() => {
   // checkAuth();
   // }, []);
-  // useEffect(() => {
-  //   const unsubscribe = auth().onAuthStateChanged(user => {
-  //     setIsAuthenticated(user);
-  //   });
-  //   return unsubscribe;
-  // }, []);
+
+  useEffect(() => {
+    // const unsubscribe = auth().onAuthStateChanged(user => {
+    //   setIsAuthenticated(user);
+    // });
+    // return unsubscribe;
+  }, []);
 
   // Show loading indicator while checking auth status
-  if (isAuthenticated === null) {
-    return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator size="large" color="#007BFF" />
-      </View>
-    );
-  }
+  // if (isAuthenticated === null) {
+  //   return (
+  //     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+  //       <ActivityIndicator size="large" color="#007BFF" />
+  //     </View>
+  //   );
+  // }
 
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        {/* {isAuthenticated ? (
+        // initialRouteName="Home"
+      >
+        {isAuthenticated ? (
           <Stack.Screen name="Home" component={HomeScreen} />
         ) : (
           <Stack.Screen
@@ -62,13 +62,10 @@ const AppNavigator = () => {
             component={AuthScreen}
             options={{headerShown: false}}
           />
-        )} */}
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default AppNavigator;
-
-/* <Stack.Screen name="Detail" component={DetailScreen} /> */
-/* <Stack.Screen name="Home" component={Test} /> */
